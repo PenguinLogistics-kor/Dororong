@@ -1,0 +1,25 @@
+import turtle
+import random
+import time  
+
+turtle.penup()
+turtle.speed('fastest')
+turtle.register_shape('dororong.gif')
+turtle.shape('dororong.gif')
+
+start_time = time.time()
+
+while True:
+    turtle.right(random.randint(0, 359))
+    turtle.pencolor('pink')
+    i = random.randint(10, 50)
+    turtle.forward(i)
+    x = turtle.xcor()
+    y = turtle.ycor()
+    if x > 700 or x < -700 or y > 700 or y < -700:
+        end_time = time.time()  
+        elapsed_time = round(end_time - start_time, 2) 
+
+        turtle.goto(0, 0)
+        turtle.write(f"움직인 시간: {elapsed_time}초", font=('굴림체', 30))
+        turtle.done()
